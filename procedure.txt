@@ -1,0 +1,54 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+How to compile P. Corke's AprilTags Linux wrapper for MATLAB
+Aldo Diaz, Linkoping, 2019
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++ Download Peter Corke's Machine Vision Toolbox for MATLAB (MVTB) from
+https://petercorke.com/wordpress/?ddownload=527
+
++ Install MVTB from MATLAB GUI by opening the file 'Machine Vision Toolbox for MATLAB.mltbx'
+
++ Uncompress the file <AprilRobotics_apriltags.zip> (AprilTags source code)
+  (or download it from)
+https://codeload.github.com/AprilRobotics/apriltags/zip/master
+
++ Rename the uncompressed directory to "apriltag" (as it is read in the wrapper)
+
++ Move the "apriltag" directory in "Machine Vision Toolbox for MATLAB/vision"
+  to MVTB's MEX path in
+MVTB_MEX=$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine\ Vision\ Toolbox\ for\ MATLAB/vision/mex
+
++ Compile AprilTag library (from the command line) by doing
+cd $MVTB_MEX/apriltag
+make
+PREFIX=$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine\ Vision\ Toolbox\ for\ MATLAB/vision/mex/apriltag
+sudo make install
+
++++++++++++++++++++++++++++++++++++++++++++++++
+++ Compilation of the MEX wrapper for MATLAB ++
++++++++++++++++++++++++++++++++++++++++++++++++
+
++ Copy the content of the directory "Machine Vision Toolbox for MATLB" to the following path
+$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine\ Vision\ Toolbox\ for\ MATLAB/
+
++ Compile the MEX file
+MVTB_MEX=$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine\ Vision\ Toolbox\ for\ MATLAB/vision/mex
+cd "$MVTB_MEX"
+PREFIX=$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine\ Vision\ Toolbox\ for\ MATLAB/vision/mex/apriltag
+mex apriltags.c -I"$PREFIX" -I"$PREFIX"/common -L"$PREFIX" -lapriltag
+
++ In MATLAB GUI, compile the rest of MVTB libraries by running
+>> make
+
+++ Render tags with appropiate scale (e.g. 3 to 5 inches)
+(The MVTB detector works well with tag36h11)
+
++ Uncompress the file <AprilRobotics_apriltag-imgs.zip>
+
++ Open a tag PNG file in GIMP
+
++ Press [SHIFT]+[CTRL]+[E] to export the image in PS (PostScript) format
+
++ Choose appropriate dimensions and press EXPORT
+
++ Print the PS file and enjoy it =})
