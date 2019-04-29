@@ -7,7 +7,7 @@ It is strongly suggested to implement the fix before compiling the C++ code for 
 N.B.: Only the family 'tag36h11' of tags is supported.
 
 # Demo
-https://youtu.be/ptx3UyyvmTA
+[AprilTag3 detection in MATLAB](https://youtu.be/ptx3UyyvmTA)
 
 # Procedure
 Read 'procedure.txt'
