@@ -13,5 +13,5 @@ https://youtu.be/ptx3UyyvmTA
 Read 'procedure.txt'
 
 # Acknowledgments
-- Basic MEX infrastructure provided Peter Corke in the Machine Vision Toolbox for MATLAB.
+- Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB.
 - 'apriltag_pose.c' fix by Gustaf Hendeby (Linkoping University, 2019).
