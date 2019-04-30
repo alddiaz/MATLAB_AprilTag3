@@ -1,7 +1,14 @@
 %APRILTAGS Read April tags from image
 %
-% tags = APRILTAGS(im) is a vector of structures that describe each of the
-% April tags found within the image IM.
+% tags = apriltags(IM, TAGSIZE, K) is a vector of structures that describe
+% each of the AprilTags found within the image IM.
+%
+% TAGSIZE specifies tag size in meters.
+%
+% K specifies camera calibration as a 3x3 matrix
+% defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters
+% (fx, fy)	camera focal length
+% (u0, v0)	principal point (optical center of camera)
 %
 % Elements of the structure are:
 %   .id         decoded id of the tag in the range 1-255
@@ -10,10 +17,10 @@
 %   .H          homography matrix (3x3) describing the projection from an
 %               "ideal" tag (with corners at (-1,-1), (1,-1), (1,1), and (-1,1)) to
 %               pixels in the image
-%   .center     centre of the tag in the image (2x1)
+%   .center     center of the tag in the image (2x1)
 %   .corners    corners of the tag in the image (2x4)
-%   .p          position of the tag center in camera coordinates (3x1)
-%   .R          rotation of the tag center with respect to camera coordinates (3x3)
+%   .p          3-D position of the tag center in camera coordinates (3x1)
+%   .R          3-D rotation of the tag center with respect to camera coordinates (3x3)
 %
 % Notes::
 % - implementation is a mex file
