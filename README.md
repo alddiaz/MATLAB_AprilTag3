@@ -1,5 +1,5 @@
 # MATLAB_AprilTag3
-A MATLAB wrapper for AprilTag3 by Aldo Diaz (aldodiaz64 at gmail dot com).<br />
+A MATLAB wrapper for AprilTag3 by Aldo Diaz (aldodiaz64 (at) gmail (dot) com).<br />
 The procedure was updated to enable the compilation in MATLAB for Linux.<br />
 The repository contains the mex function 'apriltags.c' implementing the basic functionality for detection and 3-D pose estimation of AprilTag3 (current version, April 2019).<br />
 The code includes a fix of 'apriltag_pose.c', the original C++ module for 3-D pose estimation, to prevent deallocation of uninitialized memory.
