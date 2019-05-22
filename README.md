@@ -13,7 +13,7 @@ N.B.: Only the family 'tag36h11' of tags is supported.
 Read 'procedure.txt'
 
 # Acknowledgments
-- Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB. Download available at from [http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
+- Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB. Download available at [http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
 - 'apriltag_pose.c' fix by Gustaf Hendeby (Linkoping University, 2019).
 
 # References
