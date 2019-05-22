@@ -1,7 +1,7 @@
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-How to compile P. Corke's AprilTags Linux wrapper for MATLAB
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Procedure to compile AprilTag3 MEX wrapper in MATLAB for Linux
 Aldo Diaz, Linkoping, 2019
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 + Download Peter Corke's Machine Vision Toolbox for MATLAB (MVTB) from
 https://petercorke.com/wordpress/?ddownload=527
@@ -23,9 +23,9 @@ cd MVTB_MEX/apriltag
 make
 sudo make install
 
-+++++++++++++++++++++++++++++++++++++++++++++++
-++ Compilation of the MEX wrapper for MATLAB ++
-+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++
+++ Compiling AprilTag3 MEX wrapper for MATLAB ++
+++++++++++++++++++++++++++++++++++++++++++++++++
 
 + Copy the content of the directory "Machine Vision Toolbox for MATLAB" to the following path
 $HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine\ Vision\ Toolbox\ for\ MATLAB/
