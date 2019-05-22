@@ -45,4 +45,4 @@ mex apriltags.c -I"$PREFIX" -I"$PREFIX"/common -L"$PREFIX" -lapriltag
 
 + Open a tag PNG file with an appropriate image editor, for instance, Inkscape
 
-+ Choose appropriate dimensions to print it and enjoy! =})
++ Choose appropriate tag dimensions to them and enjoy! =})
