@@ -5,7 +5,7 @@ The repository contains the mex function 'apriltags.c' implementing the basic fu
 The code includes a fix of 'apriltag_pose.c', the original C++ module for 3-D pose estimation, to prevent deallocation of uninitialized memory.
 It is strongly suggested to implement the fix before compiling the C++ code for the detector.<br />
 N.B.: Only the family 'tag36h11' of tags is supported.<br />
-Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#matlab
+Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide
 
 # Demo
 [AprilTag3 detection in MATLAB](https://youtu.be/ptx3UyyvmTA)
