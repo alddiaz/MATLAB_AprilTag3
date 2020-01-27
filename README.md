@@ -5,13 +5,13 @@ The repository contains the mex function 'apriltags.c' implementing the basic fu
 The code includes a fix of 'apriltag_pose.c', the original C++ module for 3-D pose estimation, to prevent deallocation of uninitialized memory.
 It is strongly suggested to implement the fix before compiling the C++ code for the detector.<br />
 N.B.: Only the family 'tag36h11' of tags is supported.
+Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#matlab
 
 # Demo
 [AprilTag3 detection in MATLAB](https://youtu.be/ptx3UyyvmTA)
 
 # Procedure
-Read 'procedure.txt'
-
+Read 'procedure.txt' <br />
 # Acknowledgments
 - Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB. Download available at [http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
 - 'apriltag_pose.c' fix by Gustaf Hendeby (Linkoping University, 2019).
