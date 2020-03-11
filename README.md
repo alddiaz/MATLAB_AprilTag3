@@ -27,7 +27,7 @@ tags = apriltags(IM, TAGSIZE, K); <br />
 
 "tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
 TAGSIZE specifies tag size in meters. <br /> 
-K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters
+K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters <br />
   (fx, fy)	camera focal length <br />
   (u0, v0)	principal point (optical center of camera) <br />
 <br />
