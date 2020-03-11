@@ -20,6 +20,19 @@ Read 'procedure.txt' <br />
 - Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB. Download available at [http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
 - 'apriltag_pose.c' fix by Gustaf Hendeby (Linkoping University, 2019).
 
+# Example
+im = imread("my_RGB_image.png") <br />
+imG = rgb2gray(im); <br />
+tags = apriltags(IM, TAGSIZE, K); <br />
+
+"tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
+TAGSIZE specifies tag size in meters. <br /> 
+K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters
+  (fx, fy)	camera focal length <br />
+  (u0, v0)	principal point (optical center of camera) <br />
+<br />
+Further details are given in "help apriltags".
+
 # References
 [1] Krogius, M.; Haggenmiller, A., Olson, E.; Flexible  Layouts  for  Fiducial  Tags, 2019, [pre-print](https://april.eecs.umich.edu/media/pdfs/krogius2019iros.pdf).<br />
 [2] Corke P., The Machine Vision Toolbox: a MATLAB toolbox for vision and vision-based control, In: IEEE Robotics and Automation Magazine, vol. 12(4), 2005, pp. 16-25, [DOI: 10.1109/MRA.2005.1577021](https://ieeexplore.ieee.org/document/1577021).<br />
