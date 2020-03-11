@@ -16,9 +16,6 @@ Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Gu
 
 # Procedure
 Read 'procedure.txt' <br />
-# Acknowledgments
-- Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB. Download available at [http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
-- 'apriltag_pose.c' fix by Gustaf Hendeby (Linkoping University, 2019).
 
 # Example
 im = imread("my_RGB_image.png") <br />
@@ -32,6 +29,10 @@ K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0;
   (u0, v0)	principal point (optical center of camera) <br />
 <br />
 Further details are given in "help apriltags".
+
+# Acknowledgments
+- Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB. Download available at [http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
+- 'apriltag_pose.c' fix by Gustaf Hendeby (Linkoping University, 2019).
 
 # References
 [1] Krogius, M.; Haggenmiller, A., Olson, E.; Flexible  Layouts  for  Fiducial  Tags, 2019, [pre-print](https://april.eecs.umich.edu/media/pdfs/krogius2019iros.pdf).<br />
