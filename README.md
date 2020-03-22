@@ -1,16 +1,34 @@
 # MATLAB_AprilTag3
 A MATLAB wrapper for AprilTag3 written by Aldo Díaz (aldodiaz64 (at) gmail (dot) com).<br />
 The procedure was updated to enable the compilation in MATLAB for Linux.<br />
+
+**Please cite this software if you use MATLAB_AprilTag3 in your research:**<br />
+[1] Díaz Salazar, Aldo André, "MATLAB_AprilTag3", Linköping, Sweden, 2019.
+<br /><br />
 The repository contains the mex function 'apriltags.c' implementing the basic functionality for detection and 3-D pose estimation of AprilTag3 (current version, April 2019).<br />
 The code includes a fix of 'apriltag_pose.c', the original C++ module for 3-D pose estimation, to prevent deallocation of uninitialized memory.
 It is strongly suggested to implement the fix before compiling the C++ code for the detector.<br />
-N.B.: Only the family 'tag36h11' of tags is supported.
+N.B.: Only the family 'tag36h11' of tags is supported.<br />
+Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide
 
 # Demo
 [AprilTag3 detection in MATLAB](https://youtu.be/ptx3UyyvmTA)
 
 # Procedure
-Read 'procedure.txt'
+Read 'procedure.txt' <br />
+
+# Example
+im = imread("my_RGB_image.png") <br />
+imG = rgb2gray(im); <br />
+tags = apriltags(IM, TAGSIZE, K); <br />
+
+"tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
+TAGSIZE specifies tag size in meters. <br />
+K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters <br />
+  (fx, fy)	camera focal length <br />
+  (u0, v0)	principal point (optical center of camera) <br />
+<br />
+Further details are given in "help apriltags".
 
 # Acknowledgments
 - Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB. Download available at [http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).

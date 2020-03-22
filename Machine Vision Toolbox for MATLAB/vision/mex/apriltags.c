@@ -61,7 +61,7 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
     if (ntags == 0) {
         zarray_destroy(detections);
         mxDestroyArray(out);
-	image_u8_destroy(im);
+        image_u8_destroy(im);
         apriltag_detector_destroy(td);
         tag36h11_destroy(tf);
         return NULL;
@@ -105,7 +105,7 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
         /* H: The 3x3 homography matrix describing the projection from an
 		"ideal" tag (with corners at (-1,1), (1,1), (1,-1), and (-1,-1))
 		to pixels in the image. */
-	
+
         // Save the center
         mxArray *center = mxCreateDoubleMatrix( 2, 1, mxREAL );
         p = mxGetPr(center);
