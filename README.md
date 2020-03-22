@@ -23,7 +23,11 @@ imG = rgb2gray(im); <br />
 tags = apriltags(IM, TAGSIZE, K); <br />
 
 "tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
+<<<<<<< HEAD
 TAGSIZE specifies tag size in meters. <br />
+=======
+TAGSIZE specifies tag size in meters. <br /> 
+>>>>>>> 8b49fb8e8e5149bd8cc8d1bd0a654b5661dfff69
 K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters <br />
   (fx, fy)	camera focal length <br />
   (u0, v0)	principal point (optical center of camera) <br />
