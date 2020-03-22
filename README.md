@@ -18,7 +18,7 @@ Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Gu
 Read 'procedure.txt' <br />
 
 # Example
-im = imread("my_RGB_image.png") <br />
+im = imread("my_RGB_image.png"); <br />
 imG = rgb2gray(im); <br />
 tags = apriltags(IM, TAGSIZE, K); <br />
 
