@@ -60,7 +60,7 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 
     if (ntags == 0) {
         zarray_destroy(detections);
-        mxDestroyArray(out);
+        // mxDestroyArray(out);
         image_u8_destroy(im);
         apriltag_detector_destroy(td);
         tag36h11_destroy(tf);
