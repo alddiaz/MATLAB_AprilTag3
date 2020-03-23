@@ -19,7 +19,7 @@
 extern "C" {
 #endif
 
-    static const char *fields[] = {"id", "hamming", "margin", "H", "center", "corners", "p", "R"};
+static const char *fields[] = {"id", "hamming", "margin", "H", "center", "corners", "p", "R"};
 
 mxArray *getTag(int width, int height, unsigned char *image, double tagSize, double *calibMatrix)
 {
@@ -184,6 +184,18 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 void mexFunction(int nlhs, mxArray *plhs[],
                  int nrhs, const mxArray *prhs[])
 {
+    if (prhs[0] == NULL) {
+        mexPrintf("Not enough input arguments.\n");
+        mexPrintf("Syntax:\n");
+        mexPrintf("\ttags = apriltags(IM, TAGSIZE, K)\n");
+        mexPrintf("where\n");
+        mexPrintf("\tIM:\t\tgrayscale image\n");
+        mexPrintf("\tTAGSIZE:\ttag size (in meters)\n");
+        mexPrintf("\tK:\t\tcamera calibration matrix\n\n");
+        mexPrintf("Run \"help apriltags\" for more information.\n");
+        return;
+    }
+
     // Get number of pixels in the image
     int width = mxGetN(IM_IN);
     int height = mxGetM(IM_IN);
@@ -192,8 +204,9 @@ void mexFunction(int nlhs, mxArray *plhs[],
     double ts; // tag size in meters
     double *cm; // camera calibration matrix
 
-    if (mxGetNumberOfDimensions(IM_IN) > 2)
+    if (mxGetNumberOfDimensions(IM_IN) > 2) {
     	mexErrMsgTxt("Color images are not supported");
+    }
 
     switch (mxGetClassID(IM_IN)) {
         case mxUINT8_CLASS: {
