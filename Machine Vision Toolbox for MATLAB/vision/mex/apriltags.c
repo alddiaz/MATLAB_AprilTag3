@@ -180,7 +180,7 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 }
 
 
-#define	IM_IN			prhs[0] // grayscale image matrix
+#define	IM_IN 		prhs[0] // grayscale image matrix
 #define	TAG_SIZE	prhs[1] // tag size in meters
 #define	CALIB_M		prhs[2] // camera calibration matrix
 
