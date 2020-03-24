@@ -209,7 +209,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
     int width = mxGetN(IM_IN);
     int height = mxGetM(IM_IN);
 
-    unsigned char *im;
+    unsigned char *im; // image matrix
     double ts; // tag size in meters
     double *cm; // camera calibration matrix
 
@@ -223,12 +223,12 @@ void mexFunction(int nlhs, mxArray *plhs[],
             break;
         }
         case mxDOUBLE_CLASS: {
-            unsigned char *p = im = (unsigned char *)malloc( width * height);
+            unsigned char *p = im = (unsigned char *)malloc(width*height);
             double        *q = mxGetPr(IM_IN);
 
             // Type convert
             for (int i=0; i<width*height; i++) {
-                    *p++ = (unsigned char) *q++ * 255;
+                    *p++ = *q++ * 255;
             }
             break;
         }
