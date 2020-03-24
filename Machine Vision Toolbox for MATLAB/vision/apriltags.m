@@ -23,7 +23,7 @@
 %   .R          3-D rotation of the tag center with respect to camera coordinates (3x3)
 %
 % Notes::
-% - implementation is a MEX file
+% - implementation is a MEX file.
 % - the image must be uint8 or double (grey level range 0 to 1).
 % - only tag family 'tag36h11' is supported.
 %
