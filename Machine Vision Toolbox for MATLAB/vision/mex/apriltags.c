@@ -180,7 +180,7 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 }
 
 
-#define	IM_IN     prhs[0] // grayscale image matrix
+#define	IM_IN			prhs[0] // grayscale image matrix
 #define	TAG_SIZE	prhs[1] // tag size in meters
 #define	CALIB_M		prhs[2] // camera calibration matrix
 
@@ -219,7 +219,6 @@ void mexFunction(int nlhs, mxArray *plhs[],
 
     switch (mxGetClassID(IM_IN)) {
         case mxUINT8_CLASS: {
-
             im = (unsigned char *)mxGetPr(IM_IN); // get pointer to image
             break;
         }
@@ -231,11 +230,6 @@ void mexFunction(int nlhs, mxArray *plhs[],
             for (int i=0; i<width*height; i++) {
                     *p++ = (unsigned char) *q++ * 255;
             }
-
-            // Deallocate memory
-            free(p);
-            mxFree(q);
-
             break;
         }
         default:
