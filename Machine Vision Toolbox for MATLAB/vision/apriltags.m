@@ -23,10 +23,9 @@
 %   .R          3-D rotation of the tag center with respect to camera coordinates (3x3)
 %
 % Notes::
-% - implementation is a mex file
-% - the options refine_decode and refine_pose are both enabled.
+% - implementation is a MEX file
 % - the image must be uint8 or double (grey level range 0 to 1).
-% - only tag family tag36h11 is supported.
+% - only tag family 'tag36h11' is supported.
 %
 % Author::
 %
@@ -51,7 +50,6 @@
 %
 % You should have received a copy of the GNU Leser General Public License
 % along with MVTB.  If not, see <http://www.gnu.org/licenses/>.
-% - is a MEX file.
 
 if ~exist('apriltags', 'file')
     error('you need to build the MEX version of apriltags, see vision/mex/README');

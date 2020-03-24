@@ -81,30 +81,32 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
         mxSetField(out, i, fields[0], mxCreateDoubleScalar( (double) det->id ) ); // id
         mxSetField(out, i, fields[1], mxCreateDoubleScalar( (double) det->hamming ) ); // hamming
         mxSetField(out, i, fields[2], mxCreateDoubleScalar( (double) det->decision_margin ) ); // margin
-	/* id: The decoded ID of the tag */
-	/* hamming: How many error bits were corrected. Accepting large numbers of
-		corrected errors leads to greatly increased false positive rates.
-		As of this implementation, the detector cannot detect tags with
-		a hamming distance greater than 2.*/
+        /* id: The decoded ID of the tag.*/
+        /* hamming: How many error bits were corrected. Accepting large numbers of
+        corrected errors leads to greatly increased false positive rates.
+        As of this implementation, the detector cannot detect tags with
+        a hamming distance greater than 2. */
         /* margin: A measure of the quality of the binary decoding process: the
-		average difference between the intensity of a data bit versus
-		the decision threshold. Higher numbers roughly indicate better
-		decodes. This is a reasonable measure of detection accuracy
-		only for very small tags-- not effective for larger tags (where
-		we could have sampled anywhere within a bit cell and still
-		gotten a good detection.*/
+        average difference between the intensity of a data bit versus
+        the decision threshold. Higher numbers roughly indicate better
+        decodes. This is a reasonable measure of detection accuracy
+        only for very small tags-- not effective for larger tags (where
+        we could have sampled anywhere within a bit cell and still
+        gotten a good detection. */
 
         // Save the tag homography as a 3x3 matrix
         mxArray *H = mxCreateDoubleMatrix( 3, 3, mxREAL );
         p = mxGetPr(H);
         q = det->H->data;
-        for (int row=0; row<3; row++)
-            for (int col=0; col<3; col++)
+        for (int row=0; row<3; row++) {
+            for (int col=0; col<3; col++) {
                 p[row+col*3] = *q++;
+            }
+        }
         mxSetField(out, i, fields[3], H);
         /* H: The 3x3 homography matrix describing the projection from an
-		"ideal" tag (with corners at (-1,1), (1,1), (1,-1), and (-1,-1))
-		to pixels in the image. */
+        "ideal" tag (with corners at (-1,1), (1,1), (1,-1), and (-1,-1))
+        to pixels in the image. */
 
         // Save the center
         mxArray *center = mxCreateDoubleMatrix( 2, 1, mxREAL );
@@ -122,7 +124,7 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
                 p[col+row*2] = det->p[row][col]; // it's transposed
         mxSetField(out, i, fields[5], corners ); // corners
         /* corners: The corners of the tag in image pixel coordinates.
-		These always wrap counter-clock wise around the tag. */
+        These always wrap counter-clock wise around the tag. */
 
         // Pose Estimation
         apriltag_detection_info_t info;
@@ -132,14 +134,15 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
         info.fy = *(calibMatrix + 4);
         info.cx = *(calibMatrix + 6);
         info.cy = *(calibMatrix + 7);
+        /* 'apriltag_detection_info_t' is a struct required for pose estimation
+       containing:
+         1. detector parameters
+         2. camera calibration matrix
+         3. tag size in meters
+       */
 
         apriltag_pose_t pose;
         double err = estimate_tag_pose(&info, &pose);
-	/* 'apriltag_detection_info_t' is a struct required for pose estimation
-		containing:
-		1. detector parameters
-		2. camera calibration matrix
-		3. tag size in meters */
 
         // Assign pose parameters to MATLAB structs for export
         mxArray *worldp = mxCreateDoubleMatrix( 3, 1, mxREAL );
@@ -160,10 +163,10 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 
         hamm_hist[det->hamming]++;
 
-	// Deallocate memory
-	matd_destroy(pose.t);
-	matd_destroy(pose.R);
-	apriltag_detection_destroy(det);
+        // Deallocate memory
+        matd_destroy(pose.t);
+        matd_destroy(pose.R);
+        apriltag_detection_destroy(det);
     }
 
     // Deallocate memory
@@ -177,23 +180,29 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 }
 
 
-#define	IM_IN		prhs[0] // grayscale image matrix
+#define	IM_IN     prhs[0] // grayscale image matrix
 #define	TAG_SIZE	prhs[1] // tag size in meters
 #define	CALIB_M		prhs[2] // camera calibration matrix
 
 void mexFunction(int nlhs, mxArray *plhs[],
                  int nrhs, const mxArray *prhs[])
 {
-    if (prhs[0] == NULL) {
-        mexPrintf("Not enough input arguments.\n");
-        mexPrintf("Syntax:\n");
-        mexPrintf("\ttags = apriltags(IM, TAGSIZE, K)\n");
-        mexPrintf("where\n");
-        mexPrintf("\tIM:\t\tgrayscale image\n");
-        mexPrintf("\tTAGSIZE:\ttag size (in meters)\n");
-        mexPrintf("\tK:\t\tcamera calibration matrix\n\n");
-        mexPrintf("Run \"help apriltags\" for more information.\n");
-        return;
+    // This function will error if number of inputs its not 3
+    // Check inputs:
+    if (nrhs != 3) {
+        mexErrMsgIdAndTxt("Testinputs:ErrorIdIn","Not enough input arguments.");
+    }
+    // Check outputs:
+    if (nlhs > 1) {
+        mexErrMsgIdAndTxt("Testinputs:ErrorIdOut","Invalid number of outputs to MEX file.");
+    }
+    // Check camera calibration matrix size:
+    if (mxGetN(CALIB_M) != 3 && mxGetM(CALIB_M) != 3) {
+        mexErrMsgIdAndTxt("Testinputs:ErrorIdIn","Invalid camera calibration matrix.");
+    }
+    // Check tag size and value:
+    if(mxGetN(TAG_SIZE) != 1 || mxGetScalar(TAG_SIZE) <= 0) {
+        mexErrMsgIdAndTxt("Testinputs:ErrorIdIn","Invalid tag value or size.");
     }
 
     // Get number of pixels in the image
@@ -219,16 +228,22 @@ void mexFunction(int nlhs, mxArray *plhs[],
             double        *q = mxGetPr(IM_IN);
 
             // Type convert
-            for (int i=0; i<width*height; i++)
+            for (int i=0; i<width*height; i++) {
                     *p++ = (unsigned char) *q++ * 255;
+            }
+
+            // Deallocate memory
+            free(p);
+            mxFree(q);
+
             break;
         }
         default:
-            mexErrMsgTxt("Only uint8 or double images allowed");
+            mexErrMsgTxt("Only uint8 or double images allowed.");
     }
 
-    ts = mxGetScalar(TAG_SIZE);
-    cm = mxGetData(CALIB_M);
+    ts = mxGetScalar(TAG_SIZE); // get tag size
+    cm = mxGetData(CALIB_M); // get camera calibration matrix
 
     // Find the tags
     plhs[0] = getTag(width, height, im, ts, cm);
