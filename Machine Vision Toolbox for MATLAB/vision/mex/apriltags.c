@@ -187,22 +187,35 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 void mexFunction(int nlhs, mxArray *plhs[],
                  int nrhs, const mxArray *prhs[])
 {
-    // This function will error if number of inputs its not 3
     // Check inputs:
-    if (nrhs != 3) {
-        mexErrMsgIdAndTxt("Testinputs:ErrorIdIn","Not enough input arguments.");
+    if (nrhs < 3) {
+        mexErrMsgTxt("Not enough input arguments.");
     }
+    if (nrhs > 3) {
+        mexErrMsgTxt("Too many input arguments.");
+    }
+
     // Check outputs:
     if (nlhs > 1) {
-        mexErrMsgIdAndTxt("Testinputs:ErrorIdOut","Invalid number of outputs to MEX file.");
+        mexErrMsgTxt("Invalid number of outputs to MEX file.");
     }
-    // Check camera calibration matrix size:
-    if (mxGetN(CALIB_M) != 3 && mxGetM(CALIB_M) != 3) {
-        mexErrMsgIdAndTxt("Testinputs:ErrorIdIn","Invalid camera calibration matrix.");
+
+    // Check image matrix input:
+    if (mxGetN(IM_IN) < 3 || mxGetM(IM_IN) < 3) {
+        mexErrMsgTxt("Invalid image.");
     }
-    // Check tag size and value:
+    if (mxGetNumberOfDimensions(IM_IN) > 2) {
+        mexErrMsgTxt("Color images are not supported");
+    }
+
+    // Check tag size input:
     if(mxGetN(TAG_SIZE) != 1 || mxGetScalar(TAG_SIZE) <= 0) {
-        mexErrMsgIdAndTxt("Testinputs:ErrorIdIn","Invalid tag value or size.");
+        mexErrMsgTxt("Invalid tag value.");
+    }
+
+    // Check camera calibration matrix input:
+    if (mxGetN(CALIB_M) != 3 && mxGetM(CALIB_M) != 3) {
+        mexErrMsgTxt("Invalid camera calibration matrix.");
     }
 
     // Get number of pixels in the image
@@ -212,10 +225,6 @@ void mexFunction(int nlhs, mxArray *plhs[],
     unsigned char *im; // image matrix
     double ts; // tag size in meters
     double *cm; // camera calibration matrix
-
-    if (mxGetNumberOfDimensions(IM_IN) > 2) {
-    	mexErrMsgTxt("Color images are not supported");
-    }
 
     switch (mxGetClassID(IM_IN)) {
         case mxUINT8_CLASS: {
