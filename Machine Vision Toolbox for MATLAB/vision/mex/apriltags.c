@@ -210,7 +210,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
 
     // Check tag size input:
     if(mxGetN(TAG_SIZE) != 1 || mxGetScalar(TAG_SIZE) <= 0) {
-        mexErrMsgTxt("Invalid tag value.");
+        mexErrMsgTxt("Invalid tag size value.");
     }
 
     // Check camera calibration matrix input:
