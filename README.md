@@ -18,17 +18,17 @@ Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Gu
 Read 'procedure.txt' <br />
 
 # Example
-im_rgb = imread("my_RGB_image.png"); <br />
-IM = rgb2gray(im_rgb); <br />
-tags = apriltags(IM, TAGSIZE, K); <br />
+> im_rgb = imread("my_RGB_image.png"); <br />
+  IM = rgb2gray(im_rgb); <br />
+  tags = apriltags(IM, TAGSIZE, K); <br />
 
-"tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
+- "tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
 TAGSIZE specifies the actual (printed!) tag size in meters. <br />
-K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters <br />
+- K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters <br />
   (fx, fy)	camera focal length <br />
   (u0, v0)	principal point (optical center of camera) <br />
 <br />
-Further details are given in "help apriltags".
+Run "help apriltags" for further details.
 
 # Acknowledgments
 - Basic MEX infrastructure provided by Peter Corke in the Machine Vision Toolbox for MATLAB. Download available at [http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
