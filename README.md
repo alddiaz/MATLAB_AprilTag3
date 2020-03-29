@@ -18,9 +18,9 @@ Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Gu
 Read 'procedure.txt' <br />
 
 # Example
-  im_rgb = imread("my_RGB_image.png"); <br />
-  IM = rgb2gray(im_rgb); <br />
-  tags = apriltags(IM, TAGSIZE, K); <br />
+1. im_rgb = imread("my_RGB_image.png"); <br />
+IM = rgb2gray(im_rgb); <br />
+tags = apriltags(IM, TAGSIZE, K); <br />
 
 "tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
 TAGSIZE specifies the actual (printed!) tag size in meters. <br />
