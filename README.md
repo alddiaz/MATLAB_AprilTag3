@@ -33,6 +33,6 @@ Run "help apriltags" for further details.
 
 # References
 [1] A. A. Díaz Salazar, "MATLAB_AprilTag3", Linköping, Sweden, 2019.<br />
-[2] M. Krogius, A. Haggenmiller, and E. Olson, “Flexible Layouts for Fiducial Tags”, In: 2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2019, pp. 1898–1903.[DOI: 10.1109/IROS40897.2019.8967787](https://ieeexplore.ieee.org/document/8967787).<br />
+[2] M. Krogius, A. Haggenmiller, and E. Olson, “Flexible Layouts for Fiducial Tags”, In: 2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2019, pp. 1898–1903. [DOI: 10.1109/IROS40897.2019.8967787](https://ieeexplore.ieee.org/document/8967787).<br />
 [3] Corke P., The Machine Vision Toolbox: a MATLAB toolbox for vision and vision-based control, In: IEEE Robotics and Automation Magazine, vol. 12(4), 2005, pp. 16–25. [DOI: 10.1109/MRA.2005.1577021](https://ieeexplore.ieee.org/document/1577021).<br />
 [4] Corke, P., MATLAB toolboxes: robotics and vision for students and teachers, In: IEEE Robotics and Automation Magazine, vol. 14(4), 2007, pp. 16–17. [DOI: 10.1109/M-RA.2007.912004](https://ieeexplore.ieee.org/document/4437745).
