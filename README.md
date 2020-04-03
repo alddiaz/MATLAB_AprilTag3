@@ -1,6 +1,7 @@
 # MATLAB_AprilTag3
 A MATLAB wrapper for AprilTag3 written by Aldo Díaz (aldodiaz64 (at) gmail (dot) com).<br />
-The procedure was updated to enable the compilation in MATLAB for Linux.<br />
+**N.B.:** Only the family ''**tag36h11**'' of tags is supported!<br />
+Updated procedure to enable compilation in MATLAB for Linux.<br />
 
 **Please cite this software if you use MATLAB_AprilTag3 in your research:**<br />
 [1] Díaz Salazar, Aldo André, "MATLAB_AprilTag3", Linköping, Sweden, 2019.
@@ -8,7 +9,6 @@ The procedure was updated to enable the compilation in MATLAB for Linux.<br />
 The repository contains the mex function 'apriltags.c' implementing the basic functionality for detection and 3-D pose estimation of AprilTag3 (current version, April 2019).<br />
 The code includes a fix of 'apriltag_pose.c', the original C++ module for 3-D pose estimation, to prevent deallocation of uninitialized memory.
 It is strongly suggested to implement the fix before compiling the C++ code for the detector.<br />
-N.B.: Only the family 'tag36h11' of tags is supported.<br />
 Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide
 
 # Demo
