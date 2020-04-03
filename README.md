@@ -7,7 +7,7 @@ The AprilTag3 wrapper for MATLAB with updated procedure for Linux compilation.<b
 
 # Procedure
 Read '**procedure.txt**'. <br />
-The repository contains the MEX function in 'apriltags.c' implementing the basic functionality for detection and 3-D pose estimation of AprilTag3 (version of April 2019).<br />
+The MEX function 'apriltags.c' implements detection and 3-D pose estimation of AprilTag3 (version of April 2019).<br />
 The code includes a **fix** in 'apriltag_pose.c' to prevent deallocation of uninitialized memory.
 **Please implement this fix before compiling AprilTag detector**.<br />
 Reference Guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide
