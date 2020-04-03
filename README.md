@@ -1,10 +1,9 @@
 # MATLAB_AprilTag3
-A MATLAB wrapper for AprilTag3.<br />
+The AprilTag3 wrapper for MATLAB with updated procedure for Linux compilation.<br />
 **N.B.:** Only the family ''**tag36h11**'' of tags is supported!<br />
-Updated procedure to enable compilation in MATLAB for Linux.<br />
 
 **Please cite this software if you use MATLAB_AprilTag3 in your research:**<br />
-[1] Díaz Salazar, Aldo André, "MATLAB_AprilTag3", Linköping, Sweden, 2019.
+[1] Díaz Salazar, A. A., "MATLAB_AprilTag3", Linköping, Sweden, 2019.
 
 # Procedure
 Read '**procedure.txt**'. <br />
