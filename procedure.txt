@@ -51,6 +51,6 @@ mex apriltags.c -I"$PREFIX" -I"$PREFIX"/common -L"$PREFIX" -lapriltag
 
 2.6 Open a PNG tag file in an appropriate image editor, e.g., Inkscape
 
-2.7 Choose appropriate tag dimensions to print it.
+2.7 Choose tag dimensions to print it.
 
 2.8 Enjoy! =})
