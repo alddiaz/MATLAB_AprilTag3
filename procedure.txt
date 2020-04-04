@@ -1,6 +1,6 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 How to compile MATLAB_AprilTag3 - The AprilTag3 MEX wrapper for MATLAB for Linux
-Aldo Diaz, Linkoping, 2019
+Aldo Diaz, Linköping, 2019
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 STEP 1: Compile AprilTag library
