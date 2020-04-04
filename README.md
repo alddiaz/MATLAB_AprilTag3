@@ -28,7 +28,7 @@ TAGSIZE specifies the actual (printed!) tag size in meters. <br />
 Run "help apriltags" for further details.
 
 # Acknowledgments
-- Basic MEX infrastructure provided by Peter Corke in the [Machine Vision Toolbox for MATLAB](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
+- Basic MEX infrastructure by Peter Corke in the [Machine Vision Toolbox for MATLAB](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
 - 'apriltag_pose.c' fix by [Gustaf Hendeby](http://users.isy.liu.se/en/rt/hendeby) (Linköping University, 2019).
 
 # References
