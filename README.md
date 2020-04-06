@@ -15,9 +15,11 @@ AprilRobotics guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-Use
 [AprilTag3 detection in MATLAB](https://youtu.be/ptx3UyyvmTA)
 
 # Example
-> im_rgb = imread("my_RGB_image.png"); <br />
-  IM = rgb2gray(im_rgb); <br />
-  tags = apriltags(IM, TAGSIZE, K); <br />
+```matlab
+im_rgb = imread("my_RGB_image.png");
+IM = rgb2gray(im_rgb);
+tags = apriltags(IM, TAGSIZE, K);
+```
 
 - "tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
 TAGSIZE specifies the actual (printed!) tag size in meters. <br />
