@@ -15,19 +15,19 @@ AprilRobotics guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-Use
 [AprilTag3 detection in MATLAB](https://youtu.be/ptx3UyyvmTA)
 
 # Example
+Run `help apriltags` for further details.
+
 ```matlab
 im_rgb = imread("my_RGB_image.png");
 IM = rgb2gray(im_rgb);
 tags = apriltags(IM, TAGSIZE, K);
 ```
 
-- "tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
+> "tags" is a vector of structures that describe each of the AprilTags found within image IM. <br />
 TAGSIZE specifies the actual (printed!) tag size in meters. <br />
-- K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters <br />
+   K specifies camera calibration as a 3x3 matrix defined as K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters <br />
   (fx, fy)	camera focal length <br />
   (u0, v0)	principal point (optical center of camera) <br />
-
-Run "help apriltags" for further details.
 
 # Acknowledgments
 - Basic MEX infrastructure by Peter Corke in the [Machine Vision Toolbox for MATLAB](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
