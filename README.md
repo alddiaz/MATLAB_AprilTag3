@@ -26,14 +26,14 @@ tags = apriltags(IM, TAGSIZE, K);
 **IM** is a grayscale image. <br />
 **TAGSIZE** specifies the actual (printed!) tag size in meters. <br />
 **K** specifies camera calibration as a 3x3 matrix defined by K = [fx 0 u0; 0 fy v0; 0 0 1], with parameters <br />
-> - (fx, fy)	camera focal length <br />
-> -(u0, v0)	principal point (optical center of camera) <br /> <br />
+> + (fx, fy)	camera focal length <br />
+> - (u0, v0)	principal point (optical center of camera) <br /> <br />
 Outputs <br />
 *tags* is a vector of structures with the parameters of the AprilTags found in **IM**. <br />
 
 # Acknowledgments
-- Basic MEX infrastructure by Peter Corke in the [Machine Vision Toolbox for MATLAB](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox).
-- 'apriltag_pose.c' fix by [Gustaf Hendeby](http://users.isy.liu.se/en/rt/hendeby).
+Basic MEX infrastructure by Peter Corke in the [Machine Vision Toolbox for MATLAB](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox). <br />
+'apriltag_pose.c' fix by [Gustaf Hendeby](http://users.isy.liu.se/en/rt/hendeby).
 
 # References
 [1] A. A. Díaz Salazar, "MATLAB_AprilTag3", Linköping, Sweden, 2019. [Online](https://github.com/alddiaz/MATLAB_AprilTag3). <br />
