@@ -1,9 +1,9 @@
 # MATLAB_AprilTag3
 The AprilTag3 wrapper for MATLAB with updated procedure for Linux compilation.<br />
-**N.B.:** Only the family ''**tag36h11**'' of tags is supported!<br />
+**N.B.:** Only the tag family ''**tag36h11**'' is supported!<br />
 
 **Please cite this software if you use MATLAB_AprilTag3 in your research:**<br />
-[1] A. A. Díaz Salazar, "MATLAB_AprilTag3", Linköping, Sweden, 2019.
+[1] A. A. Díaz Salazar, "MATLAB_AprilTag3", Linköping, Sweden, 2019. [Online](https://github.com/alddiaz/MATLAB_AprilTag3).
 
 # Procedure
 Read '**procedure.txt**'. <br />
@@ -34,7 +34,7 @@ TAGSIZE specifies the actual (printed!) tag size in meters. <br />
 - 'apriltag_pose.c' fix by [Gustaf Hendeby](http://users.isy.liu.se/en/rt/hendeby).
 
 # References
-[1] A. A. Díaz Salazar, "MATLAB_AprilTag3", Linköping, Sweden, 2019.<br />
+[1] A. A. Díaz Salazar, "MATLAB_AprilTag3", Linköping, Sweden, 2019. [Online](https://github.com/alddiaz/MATLAB_AprilTag3). <br />
 [2] M. Krogius, A. Haggenmiller, and E. Olson, “Flexible Layouts for Fiducial Tags”, In: 2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2019, pp. 1898–1903. [DOI: 10.1109/IROS40897.2019.8967787](https://ieeexplore.ieee.org/document/8967787).<br />
 [3] P. Corke, The Machine Vision Toolbox: a MATLAB toolbox for vision and vision-based control, In: IEEE Robotics and Automation Magazine, vol. 12(4), 2005, pp. 16–25. [DOI: 10.1109/MRA.2005.1577021](https://ieeexplore.ieee.org/document/1577021).<br />
 [4] P. Corke, MATLAB toolboxes: robotics and vision for students and teachers, In: IEEE Robotics and Automation Magazine, vol. 14(4), 2007, pp. 16–17. [DOI: 10.1109/M-RA.2007.912004](https://ieeexplore.ieee.org/document/4437745).
