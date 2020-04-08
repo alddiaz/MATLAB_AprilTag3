@@ -25,7 +25,7 @@ tags = apriltags(IM, TAGSIZE, K);
 > Inputs: <br />
 **IM** is a grayscale image. <br />
 **TAGSIZE** specifies the actual (printed!) tag size in meters. <br />
-**K** specifies camera calibration as a 3x3 matrix defined by K = [fx 0 u0; 0 fy v0; 0 0 1] where **(fx, fy)** is the focal length and **(u0, v0)** is the principal point (optical center). <br />
+**K** specifies camera calibration as a 3x3 matrix defined by **K** = [**fx** 0 **u0**; 0 **fy** **v0**; 0 0 1] where **(fx, fy)** is the focal length and **(u0, v0)** is the principal point (optical center). <br />
 Outputs: <br />
 **tags** is a vector of structures with the parameters of the AprilTags found in **IM**. <br />
 
