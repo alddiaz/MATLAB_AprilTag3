@@ -1,14 +1,14 @@
 # MATLAB_AprilTag3
-The AprilTag3 wrapper for MATLAB with updated procedure for Linux compilation.<br />
-**N.B.:** Only the tag family ''**tag36h11**'' is supported!<br />
+The AprilTag3 wrapper for MATLAB with updated procedure for Linux compilation. <br />
+**N.B.:** Only the tag family ''**tag36h11**'' is supported! <br />
 
-**Please cite this software if you use MATLAB_AprilTag3 in your research:**<br />
+**Please cite this software if you use MATLAB_AprilTag3 in your research:** <br />
 [1] A. A. Díaz Salazar, "MATLAB_AprilTag3", Linköping, Sweden, 2019. [Online](https://github.com/alddiaz/MATLAB_AprilTag3).
 
 # Procedure
-Read '**procedure.txt**'. <br />
-The MEX function '**apriltags.c**' implements AprilTag3 detection and 3-D pose estimation (April 2019 version).<br />
-**'apriltags.c'** contains a **fix** to prevent deallocation of uninitialized memory.<br />
+View "**procedure.txt**". <br />
+- The MEX function "**apriltags.c**" implements AprilTag3 detection and 3-D pose estimation (April 2019 version). <br />
+**'apriltags.c'** contains a **fix** to prevent deallocation of uninitialized memory. <br />
 AprilRobotics guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide
 
 # Demo
