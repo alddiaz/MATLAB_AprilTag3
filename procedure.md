@@ -28,24 +28,27 @@ sudo make install
 
 # STEP 2: Compile MATLAB_AprilTag3 - The AprilTag3 MEX wrapper for MATLAB
 
-2.1 Copy all the content from MATLAB_AprilTag3 GitHub directory "Machine Vision Toolbox for MATLAB" to:
-"$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/"
+1. Copy all the content from MATLAB_AprilTag3 GitHub directory `Machine Vision Toolbox for MATLAB` to `"$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/"`
 
-2.2 Compile the MEX file from the command line:
+1. Compile the MEX file:
+```shell
 cd "$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex"
 PREFIX="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
 mex apriltags.c -I"$PREFIX" -I"$PREFIX"/common -L"$PREFIX" -lapriltag
+```
 
-2.3 Open MATLAB to compile the rest of MVTB libraries:
->> make
+1. Open MATLAB to compile the rest of MVTB libraries:
+```shell
+make
+```
 
-2.4 Render the tags with appropiate scale (e.g. 3 to 5 inches)
-*** The MVTB detector only works with the 'tag36h11' family!!! ***
+1. Render the tags with appropiate scale (e.g. 3 to 5 inches) <br />
+**N.B.:** The AprilTag detector only works with "**tag36h11**" tag family!
 
-2.5 Uncompress the GitaHub file <tag36h11.tar.gz>
+1. Uncompress the GitaHub file `tag36h11.tar.gz`
 
-2.6 Open a PNG tag file in an appropriate image editor, e.g., Inkscape
+1. Open a PNG tag file in an appropriate image editor, e.g., Inkscape
 
-2.7 Choose tag dimensions to print it.
+1. Choose tag dimensions to print it.
 
-2.8 Enjoy! =})
+1. Enjoy! =})
