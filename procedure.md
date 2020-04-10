@@ -12,12 +12,13 @@ https://petercorke.com/wordpress/?ddownload=527
   or download the latest version at: <br />
 https://codeload.github.com/AprilRobotics/apriltags/zip/master
 1. Rename the uncompressed directory to `apriltag` to match it with the wrapper.
-1. Move `apriltag` directory to MVTB_MEX directory at: <br />
+1. Move latter `apriltag` directory to MVTB_MEX directory by running from command line: <br />
 ```shell
 MVTB_MEX="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
+mv apriltag "$MVTB_MEX"
 ```
 1. Copy and replace the content of MATLAB_AprilTag3 GitHub directory `apriltag`  at `Machine Vision Toolbox for MATLAB/vision/mex/apriltag/` to `MVTB_MEX` directory.
-1. Compile the AprilTag library from command line:
+1. Compile the AprilTag library:
 ```shell
 cd "$MVTB_MEX"
 make
