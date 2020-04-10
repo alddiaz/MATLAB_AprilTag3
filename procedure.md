@@ -2,9 +2,8 @@
 
 ## STEP 1: Compile AprilTag library
 
-1. Download the Machine Vision Toolbox (MVTB) for MATLAB: <br />
+1. Install the Machine Vision Toolbox (MVTB) by opening MATLAB_AprilTag3 GitHub's file `MVTB-4.3.mltbx` from MATLAB GUI, or download the latest version at: <br />
     https://petercorke.com/download/28/mvtb/1109/mvtb-4-3.mltbx
-1. Install the MVTB from MATLAB GUI by opening the file `Machine Vision Toolbox for MATLAB.mltbx`
 1. Create auxiliary environmental variables from command line:
     ```shell
     MVTB="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB"
