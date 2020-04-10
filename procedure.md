@@ -1,5 +1,4 @@
-# How to compile MATLAB_AprilTag3 - The AprilTag3 MEX wrapper for MATLAB for Linux
-**Aldo Díaz**, Linköping, 2019
+# How to compile MATLAB_AprilTag3: The MATLAB MEX wrapper for Linux
 
 ## STEP 1: Compile AprilTag library
 
