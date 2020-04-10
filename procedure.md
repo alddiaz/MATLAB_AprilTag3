@@ -25,10 +25,11 @@ to:
 "$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
 
 1. Compile the AprilTag library from the command line:
+```shell
 cd "$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
 make
 sudo make install
-
+```
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
 # STEP 2: Compile MATLAB_AprilTag3 - The AprilTag3 MEX wrapper for MATLAB
