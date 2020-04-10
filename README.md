@@ -6,7 +6,7 @@ The AprilTag3 wrapper for MATLAB with updated procedure for Linux compilation. <
 [1] A. A. Díaz Salazar, "MATLAB_AprilTag3", Linköping, Sweden, 2019. [Online](https://github.com/alddiaz/MATLAB_AprilTag3).
 
 # Procedure
-View "**procedure.txt**". <br />
+Read `procedure.txt` for install instructions. <br />
 > The MEX function "**apriltags.c**" implements AprilTag3 detection and 3-D pose estimation (April 2019 version) and contains a **MAJOR FIX** to prevent deallocation of uninitialized memory. <br />
 AprilRobotics guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide
 
@@ -14,7 +14,7 @@ AprilRobotics guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-Use
 [AprilTag3 detection in MATLAB](https://youtu.be/ptx3UyyvmTA)
 
 # Example
-Run `help apriltags` for further details.
+Run `help apriltags` for syntax details.
 
 ```matlab
 im_rgb = imread("my_RGB_image.png");
