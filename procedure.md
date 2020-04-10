@@ -8,16 +8,16 @@ Aldo Diaz, Linköping, 2019
 1. Download the Machine Vision Toolbox (MVTB) for MATLAB: <br />
 https://petercorke.com/wordpress/?ddownload=527
 
-1. Install MVTB from MATLAB GUI by opening the file 'Machine Vision Toolbox for MATLAB.mltbx'
+1. Install MVTB from MATLAB GUI by opening the file `Machine Vision Toolbox for MATLAB.mltbx`
 
-1. Uncompress the MATLAB_AprilTag3 GitHub file <AprilTag3.tar.gz> (AprilTag3 source code)
-  or download the latest version at:
+1. Uncompress the MATLAB_AprilTag3 GitHub's file `AprilTag3.tar.gz` (AprilTag3 source code)
+  or download the latest version at: <br />
 https://codeload.github.com/AprilRobotics/apriltags/zip/master
 
-1. Rename the uncompressed directory to "apriltag" to match it with the wrapper.
+1. Rename the uncompressed directory to `apriltag` to match it with the wrapper.
 
-1. Move "apriltag" directory to: <br />
-"$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
+1. Move `apriltag` directory to: <br />
+`"$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"`
 
 1. Replace the content from MATLAB_AprilTag3 GitHub directory "apriltag" given in:
 "Machine Vision Toolbox for MATLAB/vision/mex/apriltag/"
