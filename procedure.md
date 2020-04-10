@@ -19,7 +19,7 @@ MVTB_MEX="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MA
 1. Copy and replace the content of MATLAB_AprilTag3 GitHub directory `apriltag`  at `Machine Vision Toolbox for MATLAB/vision/mex/apriltag/` to `MVTB_MEX` directory.
 1. Compile the AprilTag library from command line:
 ```shell
-cd $MVTB_MEX
+cd "$MVTB_MEX"
 make
 sudo make install
 ```
