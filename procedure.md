@@ -58,3 +58,5 @@ and copy it into `MVTB` directory:
 1. Choose the tag dimensions before printing.
 
 1. Enjoy! =})
+
+<a href="http://example.com/" target="_blank">example</a>
