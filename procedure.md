@@ -3,7 +3,7 @@
 ## STEP 1: Compile AprilTag library
 
 1. Download the Machine Vision Toolbox (MVTB) for MATLAB: <br />
-https://petercorke.com/wordpress/?ddownload=527
+    https://petercorke.com/download/28/mvtb/1109/mvtb-4-3.mltbx
 1. Install the MVTB from MATLAB GUI by opening the file `Machine Vision Toolbox for MATLAB.mltbx`
 1. Create auxiliary environmental variables from command line:
     ```shell
@@ -13,7 +13,7 @@ https://petercorke.com/wordpress/?ddownload=527
     ```
 1. Download MATLAB_AprilTag3 GitHub's file `AprilTag3.tar.gz` (the AprilTag3 source code)
 and uncompress it, or download the latest version at: <br />
-https://codeload.github.com/AprilRobotics/apriltags/zip/master
+    https://codeload.github.com/AprilRobotics/apriltags/zip/master
 1. Rename the uncompressed directory to `apriltag` to match the wrapper path.
 1. Copy latter `apriltag` directory to `MVTB_MEX` by running from command line: <br />
     ```shell
