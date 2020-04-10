@@ -5,26 +5,26 @@ Aldo Diaz, Linköping, 2019
 
 # STEP 1: Compile AprilTag library
 
-1.1 Download the Machine Vision Toolbox (MVTB) for MATLAB: <br />
-https://petercorke.com/wordpress/?ddownload=527  <br />
+1. Download the Machine Vision Toolbox (MVTB) for MATLAB: <br />
+https://petercorke.com/wordpress/?ddownload=527
 
-1.2 Install MVTB from MATLAB GUI by opening the file 'Machine Vision Toolbox for MATLAB.mltbx'  <br />
+1. Install MVTB from MATLAB GUI by opening the file 'Machine Vision Toolbox for MATLAB.mltbx'
 
-1.3 Uncompress the MATLAB_AprilTag3 GitHub file <AprilTag3.tar.gz> (AprilTag3 source code)
+1. Uncompress the MATLAB_AprilTag3 GitHub file <AprilTag3.tar.gz> (AprilTag3 source code)
   or download the latest version at:
-https://codeload.github.com/AprilRobotics/apriltags/zip/master <br />
+https://codeload.github.com/AprilRobotics/apriltags/zip/master
 
-1.4 Rename the uncompressed directory to "apriltag" to match it with the wrapper. <br />
+1. Rename the uncompressed directory to "apriltag" to match it with the wrapper.
 
-1.5 Move "apriltag" directory to: <br />
+1. Move "apriltag" directory to: <br />
 "$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
 
-1.6 Replace the content from MATLAB_AprilTag3 GitHub directory "apriltag" given in:
+1. Replace the content from MATLAB_AprilTag3 GitHub directory "apriltag" given in:
 "Machine Vision Toolbox for MATLAB/vision/mex/apriltag/"
 to:
 "$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
 
-1.7 Compile the AprilTag library from the command line:
+1. Compile the AprilTag library from the command line:
 cd "$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
 make
 sudo make install
