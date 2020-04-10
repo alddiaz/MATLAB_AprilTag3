@@ -18,7 +18,7 @@ MVTB_APRILTAG="$MVTB_MEX"/apriltag
 and uncompress it, or download the latest version at: <br />
 https://codeload.github.com/AprilRobotics/apriltags/zip/master
 1. Rename the uncompressed directory to `apriltag` to match the wrapper path.
-1. Copy latter `apriltag` directory to `MVTB_MEX` by running from command line: <br />
+1. Copy latter `apriltag` directory to `MVTB_MEX` by running in command line: <br />
 ```shell
 cp -pr apriltag "$MVTB_MEX"
 ```
@@ -50,7 +50,8 @@ mex apriltags.c -I"$MVTB_APRILTAG" -I"$MVTB_APRILTAG"/common -L"$MVTB_APRILTAG" 
 ```matlab
 make
 ```
-1. Render your tags with appropriate scale (e.g. 3 to 5 inches) <br />
+# STEP 3: Render your tags with appropriate scale (e.g. 3 to 5 inches)
+
 **N.B.:** MATLAB_AprilTag3 detector only works with "**tag36h11**" tag family!
 
 1. Download and uncompress MATLAB_AprilTag3 GitHub's file `tag36h11.tar.gz`
