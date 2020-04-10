@@ -7,48 +7,56 @@ Aldo Diaz, Linköping, 2019
 
 1. Download the Machine Vision Toolbox (MVTB) for MATLAB: <br />
 https://petercorke.com/wordpress/?ddownload=527
-1. Install MVTB from MATLAB GUI by opening the file `Machine Vision Toolbox for MATLAB.mltbx`
-1. Uncompress the MATLAB_AprilTag3 GitHub's file `AprilTag3.tar.gz` (AprilTag3 source code)
-  or download the latest version at: <br />
-https://codeload.github.com/AprilRobotics/apriltags/zip/master
-1. Rename the uncompressed directory to `apriltag` to match it with the wrapper.
-1. Move latter `apriltag` directory to MVTB_MEX directory by running from command line: <br />
+1. Install the MVTB from MATLAB GUI by opening the file `Machine Vision Toolbox for MATLAB.mltbx`
+1. Create auxiliary environmental variables in command line:
 ```shell
-MVTB_MEX="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
-mv apriltag "$MVTB_MEX"
+MVTB="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB"
+MVTB_MEX="$MVTB"/vision/mex
+MVTB_APRILTAG="$MVTB_MEX"/apriltag
 ```
-1. Copy and replace the content of MATLAB_AprilTag3 GitHub directory `apriltag`  at `Machine Vision Toolbox for MATLAB/vision/mex/apriltag/` to `MVTB_MEX` directory.
+1. Download MATLAB_AprilTag3 GitHub's file `AprilTag3.tar.gz` (the AprilTag3 source code)
+and uncompress it, or download the latest version at: <br />
+https://codeload.github.com/AprilRobotics/apriltags/zip/master
+1. Rename the uncompressed directory to `apriltag` to match the wrapper path.
+1. Copy latter `apriltag` directory to `MVTB_MEX` by running from command line: <br />
+```shell
+cp -pr apriltag "$MVTB_MEX"
+```
+1. Download MATLAB_AprilTag3 GitHub's directory `apriltag` at `Machine Vision Toolbox for MATLAB/vision/mex/apriltag/`
+and copy it into `MVTB_MEX` directory:
+```shell
+cp -pr apriltag "$MVTB_MEX"
+```
 1. Compile the AprilTag library:
 ```shell
-cd "$MVTB_MEX"
+cd "$MVTB_APRILTAG"
 make
 sudo make install
 ```
-++++++++++++++++++++++++++++++++++++++++++++++++
 
 # STEP 2: Compile MATLAB_AprilTag3 - The AprilTag3 MEX wrapper for MATLAB
 
-1. Copy all the content from MATLAB_AprilTag3 GitHub directory `Machine Vision Toolbox for MATLAB` to `"$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/"`
-
+1. Download MATLAB_AprilTag3 GitHub's directory `Machine Vision Toolbox for MATLAB`
+and copy it into `MVTB` directory:
+```shell
+cp -pr "Machine Vision Toolbox for MATLAB" "$MVTB"
+```
 1. Compile the MEX file:
 ```shell
-cd "$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex"
-PREFIX="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
-mex apriltags.c -I"$PREFIX" -I"$PREFIX"/common -L"$PREFIX" -lapriltag
+cd "$MVTB_MEX"
+mex apriltags.c -I"$MVTB_APRILTAG" -I"$MVTB_APRILTAG"/common -L"$MVTB_APRILTAG" -lapriltag
 ```
-
-1. Open MATLAB to compile the rest of MVTB libraries:
-```shell
+1. Compile remaining MVTB libraries in MATLAB's command line:
+```matlab
 make
 ```
+1. Render your tags with appropriate scale (e.g. 3 to 5 inches) <br />
+**N.B.:** MATLAB_AprilTag3 detector only works with "**tag36h11**" tag family!
 
-1. Render the tags with appropiate scale (e.g. 3 to 5 inches) <br />
-**N.B.:** The AprilTag detector only works with "**tag36h11**" tag family!
+1. Download and uncompress MATLAB_AprilTag3 GitHub's file `tag36h11.tar.gz`
 
-1. Uncompress the GitaHub file `tag36h11.tar.gz`
+1. Open a PNG tag file using an appropriate image editor, e.g., Inkscape.
 
-1. Open a PNG tag file in an appropriate image editor, e.g., Inkscape
-
-1. Choose tag dimensions to print it.
+1. Choose the tag dimensions before printing.
 
 1. Enjoy! =})
