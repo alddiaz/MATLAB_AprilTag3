@@ -16,8 +16,10 @@ https://codeload.github.com/AprilRobotics/apriltags/zip/master
 
 1. Rename the uncompressed directory to `apriltag` to match it with the wrapper.
 
-1. Move `apriltag` directory to: <br />
-`"$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"`
+1. Move `apriltag` directory to MVTB_MEX directory at: <br />
+```shell
+MVTB_MEX="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB/vision/mex/apriltag"
+```
 
 1. Replace the content from MATLAB_AprilTag3 GitHub directory "apriltag" given in:
 "Machine Vision Toolbox for MATLAB/vision/mex/apriltag/"
