@@ -1,5 +1,5 @@
 # MATLAB_AprilTag3
-The AprilTag3 wrapper for MATLAB with updated procedure for Linux compilation. <br />
+The AprilTag3 MEX wrapper for MATLAB on Linux implements tag detection and 3-D pose estimation. <br />
 **N.B.:** Only the tag family ''**tag36h11**'' is supported! <br />
 
 **Please cite this software if you use MATLAB_AprilTag3 in your research:** <br />
