@@ -1,4 +1,5 @@
-# How to compile MATLAB_AprilTag3: The MATLAB MEX wrapper for Linux
+# How to compile MATLAB_AprilTag3
+## The AprilTag3 MATLAB MEX wrapper for Linux
 
 ## STEP 1: Compile AprilTag library
 
@@ -30,7 +31,7 @@ and copy it into `MVTB_MEX` directory:
     sudo make install
     ```
 
-## STEP 2: Compile MATLAB_AprilTag3 - The AprilTag3 MEX wrapper for MATLAB
+## STEP 2: Compile MATLAB_AprilTag3
 
 1. Download MATLAB_AprilTag3 GitHub's directory `Machine Vision Toolbox for MATLAB`
 and copy it into `MVTB` directory:
