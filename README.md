@@ -11,7 +11,7 @@ Read `procedure.md` for install instructions. <br />
 AprilRobotics guide: https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide
 
 # Demo
-[AprilTag3 detection in MATLAB](https://youtu.be/ptx3UyyvmTA)
+[AprilTag3 detection on MATLAB](https://youtu.be/ptx3UyyvmTA)
 
 # Example
 Run `help apriltags` for syntax details.
