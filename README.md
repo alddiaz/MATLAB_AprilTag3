@@ -30,7 +30,7 @@ Outputs: <br />
 **tags** is a vector of structures with the parameters of the AprilTags found in **IM**. <br />
 
 # Acknowledgments
-Basic MEX infrastructure by Peter Corke given in the [Machine Vision Toolbox for MATLAB](http://petercorke.com/wordpress/toolboxes/machine-vision-toolbox). <br />
+Basic MEX infrastructure by Peter Corke given in the [Machine Vision Toolbox for MATLAB](http://petercorke.com/toolboxes/machine-vision-toolbox). <br />
 MEX fix provided by [Gustaf Hendeby](http://users.isy.liu.se/en/rt/hendeby).
 
 # References
