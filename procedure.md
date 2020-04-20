@@ -6,9 +6,10 @@
     https://petercorke.com/download/28/mvtb/1109/mvtb-4-3.mltbx
 1. Create auxiliary environmental variables from command line:
     ```shell
-    MVTB="$HOME/Documents/MATLAB/Add-Ons/Toolboxes/Machine Vision Toolbox for MATLAB"
-    MVTB_MEX="$MVTB"/vision/mex
-    MVTB_APRILTAG="$MVTB_MEX"/apriltag
+    MLTBX_DIR="$HOME/Documents/MATLAB/Add-Ons/Toolboxes"
+    MVTB="$MLTBX_DIR/Machine Vision Toolbox for MATLAB"
+    MVTB_MEX="$MVTB/vision/mex"
+    MVTB_APRILTAG="$MVTB_MEX/apriltag"
     ```
 1. Download MATLAB_AprilTag3 GitHub's file `AprilTag3.tar.gz` (the AprilTag3 source code)
 and uncompress it, or download the latest version at: <br />
@@ -35,7 +36,7 @@ and copy it into `MVTB_MEX` directory:
 1. Download MATLAB_AprilTag3 GitHub's directory `Machine Vision Toolbox for MATLAB`
 and copy it into `MVTB` directory:
     ```shell
-    cp -pr "Machine Vision Toolbox for MATLAB" "$MVTB"
+    cp -pr "Machine Vision Toolbox for MATLAB" "$MLTBX_DIR"
     ```
 1. Compile the MEX file:
     ```shell

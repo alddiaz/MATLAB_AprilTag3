@@ -28,12 +28,12 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 
     apriltag_detector_t *td = apriltag_detector_create();
     apriltag_detector_add_family(td, tf);
-    td->quad_decimate = 1.0;
-    td->quad_sigma = 0.0;
-    td->nthreads = 4;
-    td->debug = 0;
-    int quiet = 0;
-    int maxiters = 1;
+    td->quad_decimate = 2.0; // detection of quads done on a lower-resolution image
+    td->quad_sigma = 0.0; // Gaussian blur (std in pixels) applied to the segmented image
+    td->nthreads = 4; // number of threads to be used
+    td->debug = 0; // // When non-zero, write debugging images to the current directory
+    //int quiet = 0;
+    //int maxiters = 1;
     const int hamm_hist_max = 10;
     image_u8_t *im = NULL;
     mxArray *out;
