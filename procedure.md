@@ -34,7 +34,7 @@ and copy it into `MVTB_MEX` directory:
 ## STEP 2: Compile MATLAB_AprilTag3
 
 1. Download MATLAB_AprilTag3 GitHub's directory `Machine Vision Toolbox for MATLAB`
-and copy it into `MVTB` directory:
+and copy it into `MLTBX_DIR` directory:
     ```shell
     cp -pr "Machine Vision Toolbox for MATLAB" "$MLTBX_DIR"
     ```
