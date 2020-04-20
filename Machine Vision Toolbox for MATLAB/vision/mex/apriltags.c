@@ -28,12 +28,11 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
 
     apriltag_detector_t *td = apriltag_detector_create();
     apriltag_detector_add_family(td, tf);
-    td->quad_decimate = 2.0; // detection of quads done on a lower-resolution image
+    td->quad_decimate = 1.0; // detection of quads done on a lower-resolution image
     td->quad_sigma = 0.0; // Gaussian blur (std in pixels) applied to the segmented image
     td->nthreads = 4; // number of threads to be used
+    td->qtp.max_nmaxima = 20; // number of corner candidates to consider when segmenting a group of pixels into a quad.
     td->debug = 0; // // When non-zero, write debugging images to the current directory
-    //int quiet = 0;
-    //int maxiters = 1;
     const int hamm_hist_max = 10;
     image_u8_t *im = NULL;
     mxArray *out;
@@ -138,8 +137,7 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
        containing:
          1. detector parameters
          2. camera calibration matrix
-         3. tag size in meters
-       */
+         3. tag size in meters */
 
         apriltag_pose_t pose;
         double err = estimate_tag_pose(&info, &pose);
@@ -207,6 +205,9 @@ void mexFunction(int nlhs, mxArray *plhs[],
     if (mxGetNumberOfDimensions(IM_IN) > 2) {
         mexErrMsgTxt("Color images are not supported");
     }
+    if (mxGetClassID(IM_IN) != mxUINT8_CLASS && mxGetClassID(IM_IN) != mxDOUBLE_CLASS) {
+        mexErrMsgTxt("Only 'uint8' or 'double' images allowed.");
+    }
 
     // Check tag size input:
     if(mxGetN(TAG_SIZE) != 1 || mxGetScalar(TAG_SIZE) <= 0) {
@@ -241,8 +242,6 @@ void mexFunction(int nlhs, mxArray *plhs[],
             }
             break;
         }
-        default:
-            mexErrMsgTxt("Only uint8 or double images allowed.");
     }
 
     ts = mxGetScalar(TAG_SIZE); // get tag size

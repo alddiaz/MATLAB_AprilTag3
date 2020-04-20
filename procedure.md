@@ -52,7 +52,9 @@ and copy it into `MLTBX_DIR` directory:
 **N.B.:** MATLAB_AprilTag3 detector only works with "**tag36h11**" tag family!
 
 1. Download and uncompress MATLAB_AprilTag3 GitHub's file `tag36h11.tar.gz`
-
+    ```shell
+    gunzip -dc tag36h11.tar.gz | tar xvf -
+    ```
 1. Open a PNG tag file using an appropriate image editor, e.g., Inkscape.
 
 1. Choose the tag dimensions before printing.
