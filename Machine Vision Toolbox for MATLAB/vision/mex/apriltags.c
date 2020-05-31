@@ -66,6 +66,20 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
         return NULL;
     }
 
+    // 6-DOF pose estimation parameters
+    apriltag_pose_t pose;
+    apriltag_detection_info_t info;
+    info.tagsize = tagSize;
+    info.fx = *(calibMatrix + 0);
+    info.fy = *(calibMatrix + 4);
+    info.cx = *(calibMatrix + 6);
+    info.cy = *(calibMatrix + 7);
+    /* 'apriltag_detection_info_t' is a struct required for pose estimation
+   containing:
+     1. detector parameters
+     2. camera calibration matrix
+     3. tag size in meters */
+
     // create return structure
     out = mxCreateStructMatrix(1, ntags, 8, fields);
 
@@ -73,7 +87,7 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
         apriltag_detection_t *det;
         double *p, *q;
 
-        // Get the i'th tag
+        // Get the i-th tag
         zarray_get(detections, i, &det);
 
         // Save results into a passed MATLAB strucutre
@@ -125,21 +139,8 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
         /* corners: The corners of the tag in image pixel coordinates.
         These always wrap counter-clock wise around the tag. */
 
-        // Pose Estimation
-        apriltag_detection_info_t info;
+        // 6-DOF pose estimation
         info.det = det;
-        info.tagsize = tagSize;
-        info.fx = *(calibMatrix + 0);
-        info.fy = *(calibMatrix + 4);
-        info.cx = *(calibMatrix + 6);
-        info.cy = *(calibMatrix + 7);
-        /* 'apriltag_detection_info_t' is a struct required for pose estimation
-       containing:
-         1. detector parameters
-         2. camera calibration matrix
-         3. tag size in meters */
-
-        apriltag_pose_t pose;
         double err = estimate_tag_pose(&info, &pose);
 
         // Assign pose parameters to MATLAB structs for export
@@ -162,13 +163,13 @@ mxArray *getTag(int width, int height, unsigned char *image, double tagSize, dou
         hamm_hist[det->hamming]++;
 
         // Deallocate memory
-        matd_destroy(pose.t);
-        matd_destroy(pose.R);
         apriltag_detection_destroy(det);
     }
 
     // Deallocate memory
     // Don't deallocate contents of inputs; those are the argv!
+    matd_destroy(pose.t);
+    matd_destroy(pose.R);
     zarray_destroy(detections);
     image_u8_destroy(im);
     apriltag_detector_destroy(td);
